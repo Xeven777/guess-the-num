@@ -4,7 +4,7 @@ import React from "react";
 export default function Home() {
   return (
     <main className="flex min-h-[600px] mx-auto max-w-6xl flex-col items-center justify-between py-20 px-2">
-      <div className="mx-auto border px-4 py-12 rounded-lg border-rose-500 neu">
+      <div className="mx-auto border px-12 py-16 rounded-lg border-rose-500 neu">
         <h1 className="md:text-6xl text-4xl mb-8 font-extrabold bg-clip-text text-transparent bg-gradient-to-br from-zinc-200 via-zinc-100 to-transparent tracking-tight text-center ">
           Guess the Number !
         </h1>
