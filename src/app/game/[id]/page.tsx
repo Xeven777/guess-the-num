@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
 type Props = {
@@ -9,13 +9,14 @@ type Props = {
 
 const Page = ({ params: { id } }: Props) => {
   const router = useRouter();
-  const [guessesTaken, setGuessesTaken] = useState(0);
+  const [guessesTaken, setGuessesTaken] = useState<number>(0);
   const level = Number(id);
   const [gameResult, setGameResult] = useState("");
   const [num, setNum] = useState<number>();
   const guessTotal = level;
   const [gamePlay, setGamePlay] = useState(true);
   const [guessList, setGuessList] = useState<number[]>([]);
+  const [remarkList, setRemarkList] = useState<string[]>([]);
   const highLimit = level === 3 ? 10 : level === 5 ? 50 : 100;
   const [randomNumber, setRandomNumber] = useState(() =>
     Number((Math.random() * highLimit + 1).toFixed(0))
@@ -29,32 +30,31 @@ const Page = ({ params: { id } }: Props) => {
     e.preventDefault();
 
     if (num !== undefined) {
-      if (num >= 0 && num <= highLimit) {
-        if (guessesTaken < guessTotal - 1) {
-          setGuessesTaken(guessesTaken + 1);
-          setGuessList([...guessList, num]);
-          if (num < randomNumber) {
-            setGameResult(`${num} is lower than the number`);
-          } else if (num > randomNumber) {
-            setGameResult(`${num} is higher than the number`);
-          } else {
-            setGameResult("Correct, u won!");
-            setGamePlay(false);
-          }
+      if (num < 0 || num > highLimit) {
+        alert("Please enter a valid number between 0 and " + highLimit);
+      } else {
+        setGuessesTaken(guessesTaken + 1);
+        setGuessList([...guessList, num]);
+
+        if (num === randomNumber) {
+          setGameResult(`${num} is correct! You won!`);
+          setGamePlay(false);
+        } else if (guessesTaken < guessTotal - 1) {
+          setRemarkList([
+            ...remarkList,
+            num < randomNumber
+              ? `${num} is lower than the number`
+              : `${num} is higher than the number`,
+          ]);
         } else {
           setGameResult("Game over, u lost!");
           setGamePlay(false);
         }
-      } else {
-        alert("Please enter a valid number between 0 and " + highLimit);
       }
     }
+
     setNum(undefined);
   };
-
-  useEffect(() => {
-    console.log(gameResult);
-  }, [gameResult, num]);
 
   return (
     <div className="w-full min-h-screen flex-col flex items-center justify-center">
@@ -74,9 +74,13 @@ const Page = ({ params: { id } }: Props) => {
             <button type="submit" className="btn px-3">
               Submit
             </button>
-            <p>Guesses Available: {guessTotal-guessesTaken}</p>
+            <p>Guesses Available: {guessTotal - guessesTaken}</p>
             <p>Used :{guessList.join(", ")}</p>
             <p>{gameResult}</p>
+            <p>Remarks:</p>
+            {remarkList.map((remark, index) => (
+              <p key={index}>{remark}</p>
+            ))}
           </>
         ) : (
           <>
