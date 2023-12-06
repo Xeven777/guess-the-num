@@ -47,7 +47,7 @@ const Page = ({ params: { id } }: Props) => {
               : `${num} is higher than the number`,
           ]);
         } else {
-          setGameResult("Game over, u lost!");
+          setGameResult("Game over, u lost! The correct number was " + randomNumber + ".");
           setGamePlay(false);
         }
       }
@@ -58,13 +58,13 @@ const Page = ({ params: { id } }: Props) => {
 
   return (
     <div className="w-full min-h-screen flex-col flex items-center justify-center">
-      <p className="text-white">
-        Level: {level} | High Limit: {highLimit} | Random Number: {randomNumber}
+      <p className="text-white my-3 mx-auto">
+        Level: {level} | Guess a number between 0 and {highLimit}
       </p>
       <form onSubmit={handleSubmit}>
         <input
           placeholder="Enter your guess"
-          className="text-zinc-100 bg-zinc-900 border border-rose-700 rounded px-3 py-2 mr-3 focus:ring-2 focus:outline-none focus:ring-rose-500"
+          className="text-zinc-100 bg-zinc-900 border border-rose-700 rounded px-3 py-2 mr-3 focus:ring-2 focus:outline-none focus:ring-rose-500 mb-4"
           type="number"
           value={num || ""}
           onChange={handleChange}
@@ -86,6 +86,7 @@ const Page = ({ params: { id } }: Props) => {
           <>
             <button
               type="button"
+              className="btn px-3"
               onClick={() => {
                 router.push("/");
               }}
