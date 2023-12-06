@@ -17,7 +17,7 @@ const Page = ({ params: { id } }: Props) => {
   const [gamePlay, setGamePlay] = useState(true);
   const [guessList, setGuessList] = useState<number[]>([]);
   const [remarkList, setRemarkList] = useState<string[]>([]);
-  const highLimit = level === 3 ? 10 : level === 5 ? 50 : 100;
+  const highLimit = level === 3 ? 10 : level === 5 ? 50 : 120;
   const [randomNumber, setRandomNumber] = useState(() =>
     Number((Math.random() * highLimit + 1).toFixed(0))
   );
