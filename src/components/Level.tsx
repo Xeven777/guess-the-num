@@ -29,7 +29,7 @@ const Level = () => {
 
       <button
         type="button"
-        className="bg-rose-600 mt-3 rounded-md uppercase active:scale-95 hover:bg-rose-500 py-2 font-medium"
+        className="btn"
         onClick={() => {
           router.push(`/game/${level}`);
         }}
