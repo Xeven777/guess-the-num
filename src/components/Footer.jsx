@@ -5,7 +5,7 @@ const Footer = () => {
         <a
           href="https://bento.me/anish7"
           target="__blank"
-          className="text-rose-600"
+          className="text-rose-500"
         >
           Anish
         </a>

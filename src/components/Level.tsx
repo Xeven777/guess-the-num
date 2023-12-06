@@ -15,10 +15,10 @@ const Level = () => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col mt-4">
       <select
         title="levels"
-        className="bg-zinc-800 rounded-md py-1 px-3"
+        className="bg-zinc-800 rounded py-2 px-3"
         value={level}
         onChange={handleLevelChange}
       >
