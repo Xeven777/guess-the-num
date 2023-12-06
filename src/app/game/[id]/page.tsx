@@ -19,8 +19,8 @@ const Page = ({ params: { id } }: Props) => {
   const [remarkList, setRemarkList] = useState<string[]>([]);
   const highLimit = level === 3 ? 10 : level === 5 ? 50 : 120;
   const [randomNumber, setRandomNumber] = useState(() =>
-    Number((Math.random() * highLimit + 1).toFixed(0))
-  );
+  Math.floor(Math.random() * (highLimit + 1))
+);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNum(Number(e.target.value));
