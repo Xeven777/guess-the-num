@@ -2,7 +2,7 @@ import "./logo.css";
 
 const Logo = () => {
   return (
-    <div className="fixed left-1/2 top-5 -translate-x-1/2 z-20">
+    <div className="absolute left-1/2 top-2 -translate-x-1/2 w-full">
       <div className="loader">
         <svg viewBox="0 0 80 80">
           <circle r="32" cy="40" cx="40" id="test"></circle>

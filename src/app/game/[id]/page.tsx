@@ -1,7 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import prize from "../../../../public/prize.jpg";
+import die from "../../../../public/die.webp";
+import Logo from "@/components/Logo";
 
 type Props = {
   params: { id: string };
@@ -12,6 +16,7 @@ const Page = ({ params: { id } }: Props) => {
   const [guessesTaken, setGuessesTaken] = useState<number>(0);
   const level = Number(id);
   const [gameResult, setGameResult] = useState("");
+  const [gameWon, setGameWon] = useState(false);
   const [num, setNum] = useState<number>();
   const guessTotal = level;
   const [gamePlay, setGamePlay] = useState(true);
@@ -37,7 +42,12 @@ const Page = ({ params: { id } }: Props) => {
         setGuessList([...guessList, num]);
 
         if (num === randomNumber) {
-          setGameResult(`${num} is correct! You won!`);
+          setGameResult(
+            `Congratulations! You guessed the number in ${
+              guessList.length + 1
+            } attempts. Your score is ${100 - guessList.length * 10}`
+          );
+          setGameWon(true);
           setGamePlay(false);
         } else if (guessesTaken < guessTotal - 1) {
           setRemarkList([
@@ -48,7 +58,7 @@ const Page = ({ params: { id } }: Props) => {
           ]);
         } else {
           setGameResult(
-            "Game over, u lost! The correct number was " + randomNumber + "."
+            "Game over, you lost! The correct number was " + randomNumber + "."
           );
           setGamePlay(false);
         }
@@ -60,8 +70,9 @@ const Page = ({ params: { id } }: Props) => {
 
   return (
     <div className="w-full min-h-[620px] flex-col flex items-center px-4">
-      <div className="border-rose-600 border mt-24 px-8 py-12 rounded-lg text-center w-full md:w-96 neu">
-        <h1 className="md:text-6xl text-4xl mb-8 font-extrabold bg-clip-text text-transparent bg-gradient-to-br from-zinc-200 via-zinc-100 to-transparent tracking-tight  ">
+      <div className="border-rose-600 relative border mt-24 mb-6 px-8 pt-14 pb-6 rounded-lg text-center w-full md:w-96 neu">
+        <Logo />
+        <h1 className="md:text-6xl mt-2 text-4xl mb-8 font-extrabold bg-clip-text text-transparent bg-gradient-to-br from-zinc-200 via-zinc-100 to-transparent tracking-tight">
           Level: {level}
         </h1>
         <p className="text-zinc-100 my-3 mx-auto">
@@ -110,9 +121,13 @@ const Page = ({ params: { id } }: Props) => {
               >
                 Play Again
               </button>
-              <p>
-                <span className="txt-span">{gameResult}</span>
-              </p>
+              <p>{gameResult}</p>
+              <Image
+                src={gameWon ? prize : die}
+                alt="end"
+                width={100}
+                className="mx-auto my-6 w-3/4"
+              />
             </>
           )}
         </form>

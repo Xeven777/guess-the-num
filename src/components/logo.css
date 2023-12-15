@@ -1,6 +1,6 @@
 .loader {
   --path: #F43F5E;
-  --dot: rgb(255, 255, 255);
+  --dot: #ffffff;
   --duration: 3s;
   width: 44px;
   height: 44px;
