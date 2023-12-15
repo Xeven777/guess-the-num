@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import triangle from "../../public/triangle-svgrepo-com.svg";
 import square from "../../public/square-svgrepo-com.svg";
 
 const MusicBtn = () => {
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const handleClick = () => {
@@ -18,9 +18,10 @@ const MusicBtn = () => {
       audioRef.current?.play();
     }
   };
+
   return (
     <div
-      className="fixed top-6 right-4 md:right-12 bg-zinc-700 rounded-full flex items-center justify-center p-2 cursor-pointer hover:scale-105 transition-all active:scale-95 active:rotate-90"
+      className="fixed top-6 right-4 md:right-12 bg-zinc-800 rounded-full flex items-center justify-center p-2 cursor-pointer hover:scale-105 transition-all active:scale-95 active:rotate-90"
       onClick={handleClick}
     >
       {playing ? (

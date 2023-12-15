@@ -19,8 +19,8 @@ const Page = ({ params: { id } }: Props) => {
   const [remarkList, setRemarkList] = useState<string[]>([]);
   const highLimit = level === 3 ? 10 : level === 5 ? 50 : 120;
   const [randomNumber, setRandomNumber] = useState(() =>
-  Math.floor(Math.random() * (highLimit + 1))
-);
+    Math.floor(Math.random() * (highLimit + 1))
+  );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNum(Number(e.target.value));
@@ -71,7 +71,7 @@ const Page = ({ params: { id } }: Props) => {
           <input
             inputMode="numeric"
             placeholder="Enter your guess"
-            className="text-zinc-100 bg-zinc-900 border border-rose-700 rounded px-3 py-2 mr-3 focus:ring-2 focus:outline-none focus:ring-rose-500 mb-4"
+            className="text-zinc-100 bg-stone-900/70 border border-rose-700 rounded px-3 py-2 mr-3 focus:ring-2 focus:outline-none focus:ring-rose-500 mb-4"
             type="number"
             value={num || ""}
             onChange={handleChange}
@@ -81,12 +81,21 @@ const Page = ({ params: { id } }: Props) => {
               <button type="submit" className="btn px-4 mb-4">
                 Submit
               </button>
-              <p>Guesses Available : {guessTotal - guessesTaken}</p>
-              <p>Used : {guessList.join(", ")}</p>
-              <p>{gameResult}</p>
+              <p>
+                Guesses Available :{" "}
+                <span className="txt-span">{guessTotal - guessesTaken}</span>
+              </p>
+              <p>
+                Used : <span className="txt-span">{guessList.join(", ")}</span>
+              </p>
+              <p>
+                <span className="txt-span">{gameResult}</span>
+              </p>
               <p>Remarks:</p>
               {remarkList.map((remark, index) => (
-                <p key={index}>{remark}</p>
+                <p key={index}>
+                  <span className="txt-span">{remark}</span>
+                </p>
               ))}
             </div>
           ) : (
@@ -101,7 +110,9 @@ const Page = ({ params: { id } }: Props) => {
               >
                 Play Again
               </button>
-              <p>{gameResult}</p>
+              <p>
+                <span className="txt-span">{gameResult}</span>
+              </p>
             </>
           )}
         </form>

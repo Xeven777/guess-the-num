@@ -18,7 +18,7 @@ const Level = () => {
     <div className="flex flex-col mt-4">
       <select
         title="levels"
-        className="bg-zinc-800 rounded py-2 px-3"
+        className="bg-zinc-800/50 rounded py-2 px-3"
         value={level}
         onChange={handleLevelChange}
       >
