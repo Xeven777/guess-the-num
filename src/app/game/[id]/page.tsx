@@ -95,6 +95,7 @@ const Page = ({ params: { id } }: Props) => {
                 type="button"
                 className="btn px-3 mb-4"
                 onClick={() => {
+                  router.refresh;
                   router.push("/");
                 }}
               >
