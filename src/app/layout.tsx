@@ -3,7 +3,6 @@ import Footer from "../components/Footer";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import MusicBtn from "@/components/MusicBtn";
-import Logo from "@/components/Logo";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +23,11 @@ export const metadata: Metadata = {
       },
     ],
   },
+  icons: {
+    icon: "/favicon-32x32.png",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -35,7 +39,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <MusicBtn />
-        {/* <Logo /> */}
         {children}
         <Footer />
       </body>
