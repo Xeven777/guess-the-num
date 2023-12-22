@@ -82,7 +82,7 @@ const Page = ({ params: { id } }: Props) => {
           <input
             placeholder="Enter your guess"
             className="text-zinc-100 bg-stone-900/70 border border-rose-700 rounded px-3 py-2 mr-3 focus:ring-2 focus:outline-none focus:ring-rose-500 mb-4"
-            type="number"
+            type="text"
             value={num || ""}
             onChange={handleChange}
           />
