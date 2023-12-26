@@ -17,7 +17,7 @@ const Page = ({ params: { id } }: Props) => {
   const level = Number(id);
   const [gameResult, setGameResult] = useState("");
   const [gameWon, setGameWon] = useState(false);
-  const [num, setNum] = useState<number>(0);
+  const [num, setNum] = useState<number>();
   const guessTotal = level;
   const [gamePlay, setGamePlay] = useState(true);
   const [guessList, setGuessList] = useState<number[]>([]);
@@ -82,7 +82,8 @@ const Page = ({ params: { id } }: Props) => {
           <input
             placeholder="Enter your guess"
             className="text-zinc-100 bg-stone-900/70 border border-rose-700 rounded px-3 py-2 mr-3 focus:ring-2 focus:outline-none focus:ring-rose-500 mb-4"
-            type="number" inputMode:"numeric" 
+            type="number"
+            inputMode="numeric"
             value={num || ""}
             onChange={handleChange}
           />
