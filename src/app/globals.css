@@ -12,7 +12,7 @@ body {
       rgba(34, 14, 18, 0.253) 0%,
       rgb(20, 4, 5) 81%
     ),
-    url("/squidgamebg.jpg"), rgb(22, 4, 5);
+    url("/squidgamebg.webp"), rgb(22, 4, 5);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
