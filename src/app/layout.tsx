@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Guess The Number 7️⃣",
   description: "A Simple Guessing Game made with Next.js",
+  metadataBase: new URL("https://guess-d-num.netlify.app/"),
   openGraph: {
     type: "website",
     url: "https://guess-d-num.netlify.app/",
