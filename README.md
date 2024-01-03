@@ -4,7 +4,7 @@
 
 ## Features
 
--  **Beautiful UI/UX:** Made in thrilling Squi Game theme and also added thrilling bg-music.
+-  **Beautiful UI/UX:** Made in thrilling Squid Game theme and also added thrilling bg-music.
 -  **Smart algorithm:** The game adjusts its difficulty based on your performance, keeping you on your toes.
 - ⚡ **Fast and responsive:** Built with Next.js, the game delivers a seamless and performant experience.
 -  **Installable as an app:** Enjoy the game offline and on the go with the installable app feature (PWA).
