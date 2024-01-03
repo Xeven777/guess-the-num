@@ -35,20 +35,20 @@
 
    Visit `http://localhost:3000` to play the game.
 
-**##Installing as an App**
+##Installing as an App
 
 1. **Open the game in your browser.**
 2. **Click the "Install" button** (usually in the browser's menu).
 3. **Follow the prompts to add the game to your home screen.**
 
-**## Contributing**
+## Contributing
 
 We welcome contributions! Feel free to open issues or pull requests to make the game even better.
 
-**## License**
+## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-**## Enjoy the Game!**
+## Enjoy the Game!
 
 Have fun testing your guessing skills and let us know what you think! 
