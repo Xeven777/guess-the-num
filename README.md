@@ -1,6 +1,6 @@
 # Guess The Number Game
 
-### Test your luck and intuition in this thrilling guessing game built with Next.js!
+### Test your luck and intuition in this thrilling guessing game built with Next.js 14!
 
 ## Features
 
