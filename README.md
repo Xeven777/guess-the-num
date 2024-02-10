@@ -15,7 +15,7 @@
 1. **Clone the repository:**
 
    ```bash
-   [git clone https://github.com/your-username/guess-the-number-nextjs.git](https://github.com/Xeven777/guess-the-num.git)
+   git clone https://github.com/your-username/guess-the-number-nextjs.git
    ```
 
 2. **Install dependencies:**
@@ -35,7 +35,7 @@
 
    Visit `http://localhost:3000` to play the game.
 
-##Installing as an App
+## Installing as an App
 
 1. **Open the game in your browser.**
 2. **Click the "Install" button** (usually in the browser's menu).
