@@ -9,13 +9,13 @@
 - ⚡ **Fast and responsive:** Built with Next.js, the game delivers a seamless and performant experience.
 -  **Installable as an app:** Enjoy the game offline and on the go with the installable app feature (PWA).
 -  **Cross-platform compatibility:** Play on your desktop or mobile device seamlessly.
--  
+
 ## Getting Started
 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/guess-the-number-nextjs.git
+    https://github.com/Xeven777/guess-the-num.git
    ```
 
 2. **Install dependencies:**
